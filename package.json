@@ -1,22 +1,27 @@
 {
   "name": "finance_management",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.ts",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run index.ts",
+    "build": "tsc",
+    "start": "bun run index.ts",
+    "bootstrap:db": "bun run scripts/initializeSchema.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/helmet": "^13.0.2",
     "appwrite": "^21.3.0",
     "fastify": "^5.6.1",
-    "fastify-cors": "^6.1.0",
-    "fastify-helmet": "^7.1.0",
     "node-appwrite": "^20.2.1",
     "zod": "^4.1.12"
   },
@@ -25,7 +30,9 @@
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
     "eslint": "^9.38.0",
+    "pino-pretty": "^13.1.2",
     "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
 }
