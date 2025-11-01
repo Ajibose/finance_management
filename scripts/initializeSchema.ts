@@ -83,6 +83,7 @@ async function main() {
   /* Invoice Items Collection */
   await createCollection(COL_INVOICE_ITEMS, "Invoice Items");
   await stringAttr(COL_INVOICE_ITEMS, "invoiceId", 64, true);
+  await stringAttr(COL_INVOICE_ITEMS, "userId", 64, true);
   await stringAttr(COL_INVOICE_ITEMS, "name", 255, true);
   await floatAttr(COL_INVOICE_ITEMS, "quantity", true);
   await floatAttr(COL_INVOICE_ITEMS, "unitPrice", true);
