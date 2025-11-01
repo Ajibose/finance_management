@@ -4,6 +4,7 @@ import cors from '@fastify/cors';
 import routes from './routes';
 import { env } from './config/env';
 import requireAppwriteAuth from './plugins/requireAppwriteAuth';
+import appwritePlugin from "./plugins/appwrite";
 import { loggerOptions } from './plugins/logger';
 
 export function buildApp() {
@@ -17,6 +18,7 @@ export function buildApp() {
 
   // Auth plugin
   app.register(requireAppwriteAuth);
+  app.register(appwritePlugin);
 
   // API routes
   app.register(routes, { prefix: '/api/v1' });
