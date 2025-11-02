@@ -1,4 +1,3 @@
-// src/middleware/validate.ts
 import type { FastifyRequest, FastifyReply } from "fastify";
 import type { ZodSchema } from "zod";
 import APIResponse from "../utils/APIResponse";
@@ -33,5 +32,4 @@ export function params(schema: ZodSchema) {
   };
 }
 
-// Optional default export to match your current import
 export default { body, query, params };
