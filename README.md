@@ -97,6 +97,21 @@ APPWRITE_DATABASE_ID=
 PORT=
 ```
 
+## Authentication for Testing
+
+Since user registration and login are handled from the **frontend**, you can create a user to generate or retrieve a test JWT directly from the backend using the provided `auth.ts` script.
+
+Run the command below:
+```bash
+bun run scripts/auth.ts
+```
+
+## Hosted API
+
+The Finance Management API is live and accessible at:  
+[https://finance-management-luul.onrender.com/api/v1](https://finance-management-luul.onrender.com/api/v1)
+
+
 ## API Endpoints
 
 A full API specification is available in the **Postman Collection** included in the `/docs` directory.  
