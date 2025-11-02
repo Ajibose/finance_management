@@ -140,7 +140,7 @@ You can import it into Postman to explore all routes and test them easily.
 
 ---
 
-### 📊 Summary
+### Summary
 - **GET** `/api/v1/summary`  
   Returns financial statistics for the authenticated user, including:
   - Total revenue
