@@ -2,10 +2,12 @@ import type { FastifyPluginAsync } from 'fastify';
 import fp from 'fastify-plugin';
 import invoiceRoutes from '../modules/invoices/invoices.routes';
 import profileRoutes from '../modules/profile/profile.routes';
+import summaryRoutes from '../modules/summary/summary.routes';
 
 const routes: FastifyPluginAsync = async (app) => {
   app.register(invoiceRoutes, { prefix: '/invoices' });
   app.register(profileRoutes, { prefix: '/profile' });
+  app.register(summaryRoutes, { prefix: '/summary' });
 
   app.get('/auth/me', { preHandler: app.authGuard }, async (req) => {
     return {
