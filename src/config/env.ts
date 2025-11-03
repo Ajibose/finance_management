@@ -8,6 +8,7 @@ const Env = z.object({
   APPWRITE_PROJECT_ID: z.string().min(1),
   APPWRITE_API_KEY: z.string().min(1),
   APPWRITE_DATABASE_ID: z.string().min(1),
+  APPWRITE_BUCKET_ID: z.string().min(1).optional(),
 });
 
 export const env = Env.parse(process.env);

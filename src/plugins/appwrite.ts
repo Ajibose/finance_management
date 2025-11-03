@@ -1,4 +1,4 @@
-import { Client, Databases, Messaging, Users, Account } from "node-appwrite";
+import { Client, Databases, Messaging, Users, Account, Storage } from "node-appwrite";
 import { env } from "../config/env";
 import fp from "fastify-plugin";
 
@@ -11,7 +11,7 @@ const serverClient = new Client()
 export const db = new Databases(serverClient);
 export const messaging = new Messaging(serverClient);
 export const users = new Users(serverClient);
-
+export const storage = new Storage(serverClient);
 
 export const makeAccountFromJWT = (jwt: string) => {
   const client = new Client()
@@ -27,6 +27,7 @@ export default fp(async (fastify) => {
   fastify.decorate("db", db);
   fastify.decorate("messaging", messaging);
   fastify.decorate("users", users);
+  fastify.decorate("storage", storage);
 }, { name: "appwrite" });
 
 declare module "fastify" {
